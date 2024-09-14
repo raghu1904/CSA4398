@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Gate Pass Management</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* General styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9; /* Light gray background color */
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh; /* Full viewport height */
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            padding: 20px;
+            box-sizing: border-box;
+            flex-grow: 1;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 24px; /* Increased font size */
+        }
+        table {
+            width: 100%;
+            max-width: 1000px; /* Set a max width for the table */
+            border-collapse: collapse;
+            background-color: #ffffff; /* White background for the table */
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        th, td {
+            padding: 12px; /* Increased padding */
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+        th {
+            background-color: #007bff; /* Blue background for table header */
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9; /* Light gray background for even rows */
+        }
+        form {
+            display: flex;
+            align-items: center;
+        }
+        select, input[type="submit"] {
+            margin-left: 10px; /* Space between elements */
+        }
+        select {
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+        input[type="submit"] {
+            background-color: #007bff;
+            color: white;
+            padding: 8px 12px; /* Increased padding */
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: background-color 0.3s ease;
+        }
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+        @media (max-width: 800px) {
+            table {
+                width: 90%;
+                font-size: 14px;
+            }
+            select, input[type="submit"] {
+                font-size: 12px;
+                padding: 6px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Gate Pass Management</h1>
+
+        <!-- Gate Pass Requests Table -->
+        <table>
+            <thead>
+                <tr>
+                    <th>Student Name</th>
+                    <th>Register Number</th>
+                    <th>From Date</th>
+                    <th>To Date</th>
+                    <th>Reason</th>
+                    <th>Decision</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Example Request Row -->
+                <tr>
+                    <td>John Doe</td>
+                    <td>123456789</td>
+                    <td>2024-09-15</td>
+                    <td>2024-09-20</td>
+                    <td>Personal Visit</td>
+                    <td>
+                        <form action="gate_pass_process.php" method="post">
+                            <input type="hidden" name="register-number" value="123456789">
+                            <input type="hidden" name="from-date" value="2024-09-15">
+                            <input type="hidden" name="to-date" value="2024-09-20">
+                            <input type="hidden" name="reason" value="Personal Visit">
+                            <select name="decision" required>
+                                <option value="Approve">Approve</option>
+                                <option value="Reject">Reject</option>
+                            </select>
+                            <input type="submit" value="Submit">
+                            <div class="header"></div>
+                            <a href="admin_dashboard.html">Back to Dashboard</a>
+                        </div>
+                        </form>
+                    </td>
+                </tr>
+                <!-- Repeat similar <tr> blocks for other requests -->
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

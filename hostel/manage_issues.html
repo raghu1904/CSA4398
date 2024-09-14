@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Manage Issues</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* General styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9; /* Light gray background color */
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh; /* Full viewport height */
+        }
+        .header {
+            background-color: #007bff; /* Blue background for header */
+            color: white;
+            padding: 10px 20px;
+            text-align: right;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        .header a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            padding: 8px 16px;
+            border-radius: 4px;
+            background-color: #0056b3; /* Darker blue for button */
+            transition: background-color 0.3s;
+        }
+        .header a:hover {
+            background-color: #004494; /* Even darker blue on hover */
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 50%;
+            padding: 20px;
+            box-sizing: border-box;
+            flex-grow: 1;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 24px; /* Increased font size */
+        }
+        table {
+            width: 100%;
+            max-width: 800px;
+            border-collapse: collapse;
+            background-color: #ffffff; /* White background for table */
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #007bff; /* Blue background for table headers */
+            color: white;
+        }
+        select {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            box-sizing: border-box;
+            font-size: 14px;
+        }
+        @media (max-width: 800px) {
+            table {
+                width: 100%;
+            }
+            th, td {
+                padding: 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <a href="admin_dashboard.html">Back to Dashboard</a>
+    </div>
+    <div class="container">
+        <h1>Manage Issues</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Room Number</th>
+                    <th>Date</th>
+                    <th>Problem Description</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Sample Row, replace with dynamic content -->
+                <tr>
+                    <td>101</td>
+                    <td>2024-09-01</td>
+                    <td>Water leakage in bathroom.</td>
+                    <td>
+                        <select>
+                            <option value="Pending">Pending</option>
+                            <option value="Resolved">Resolved</option>
+                        </select>
+                    </td>
+                </tr>
+                <!-- Add more rows dynamically as needed -->
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
